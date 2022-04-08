@@ -511,7 +511,7 @@ export interface AppiumLogger {
   errorAndThrow: (...args: any[]) => never;
 }
 
-export type AppiumServer = Server & {
+export type AppiumServer = Omit<Server, 'close'> & {
   close: () => Promise<void>;
 };
 
